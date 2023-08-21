@@ -20,8 +20,6 @@ void BKPRegister::set(unsigned int begin, unsigned int size, unsigned int value)
     value = value & (0xFFFFFFFFU >> (32-size));
     buffer &= ~((0xFFFFFFFFU >> (32-size)) << (32-begin-size)); 
     buffer |= (value << (32-begin-size));
-
-    save();
 }
 
 int BKPRegister::get(unsigned int begin, unsigned int size){
